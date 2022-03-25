@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Item from "./Item.js";
+import ItemsList from "./ItemsList.js";
 import uuid from "react-uuid";
 
 export default function Shop() {
@@ -73,7 +74,7 @@ export default function Shop() {
         )}
       </div>
 
-      <ul className="ui-list">{itemRendered}</ul>
+      <ul className="ui-list"><ItemsList /></ul>
     </>
   );
 }
