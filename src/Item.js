@@ -24,7 +24,6 @@ export default function Item(props) {
       <div className="item-info">
         <h2 className="item-title">{info.name}</h2>
         <p className="item-desc">{info.desc}</p>
-        <p className="item-desc">{info.id}</p>
       </div>
       <div className="item-quantity">
         <button
