@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ItemsList from "./ItemsList.js";
 import uuid from "react-uuid";
+import AddItem from "./AddItem.js";
 
 export default function Shop() {
   const [items, setItems] = useState([]);
@@ -26,36 +27,7 @@ export default function Shop() {
 
   return (
     <>
-      <form onSubmit={handleAddItem}>
-        <div>
-          <label htmlFor="item-name">Введите товар:</label>
-          <input
-            id="item-name"
-            type="text"
-            placeholder="Название товара"
-            className="ui-textfield"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="item-desc">Введите описание:</label>
-          <input
-            id="item-desc"
-            type="text"
-            placeholder="Описание товара"
-            className="ui-textfield"
-            value={desc}
-            onChange={(e) => setDesc(e.target.value)}
-          />
-        </div>
-        <div className="form-footer">
-          {(!name || !desc) && (
-            <div className="validation">Заполните все поля</div>
-          )}
-          <input type="submit" className="ui-button" value="Добавить" />
-        </div>
-      </form>
+      <AddItem name={name} desc={desc} setName={setName} setDesc={setDesc} onAddItem={handleAddItem} />
 
       <div>
         {items.length === 0 && (
@@ -63,7 +35,7 @@ export default function Shop() {
         )}
       </div>
 
-      <ul className="ui-list"><ItemsList items={items} onDeleteItem={handleDeleteItem}/></ul>
+      <ItemsList items={items} onDeleteItem={handleDeleteItem} />
     </>
   );
 }
