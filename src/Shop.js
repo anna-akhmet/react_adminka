@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Item from "./Item.js";
 import ItemsList from "./ItemsList.js";
 import uuid from "react-uuid";
 
@@ -24,16 +23,6 @@ export default function Shop() {
     setItems(items.filter((item) => item.id !== e.target.parentElement.id));
   }
 
-  const itemRendered = items.map((item, index) => {
-    return (
-      <li className="ui-item-list" key={items[index].id} id={items[index].id}>
-        <Item info={items[index]} />
-        <button className="item-button" onClick={handleDeleteItem}>
-          Удалить
-        </button>
-      </li>
-    );
-  });
 
   return (
     <>
@@ -74,7 +63,7 @@ export default function Shop() {
         )}
       </div>
 
-      <ul className="ui-list"><ItemsList /></ul>
+      <ul className="ui-list"><ItemsList items={items} onDeleteItem={handleDeleteItem}/></ul>
     </>
   );
 }
