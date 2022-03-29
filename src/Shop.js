@@ -24,10 +24,18 @@ export default function Shop() {
     setItems(items.filter((item) => item.id !== e.target.parentElement.id));
   }
 
+  function handleNameChange(e) {
+    setName(e.target.value);
+  }
+
+  function handleDescChange(e) {
+    setDesc(e.target.value);
+  }
+
 
   return (
     <>
-      <AddItem name={name} desc={desc} setName={setName} setDesc={setDesc} onAddItem={handleAddItem} />
+      <AddItem name={name} desc={desc} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
 
       <div>
         {items.length === 0 && (

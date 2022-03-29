@@ -12,7 +12,7 @@ export default function AddItems(props) {
             placeholder="Название товара"
             className="ui-textfield"
             value={props.name}
-            onChange={(e) => props.setName(e.target.value)}
+            onChange={props.onNameChange}
           />
         </div>
         <div>
@@ -23,7 +23,7 @@ export default function AddItems(props) {
             placeholder="Описание товара"
             className="ui-textfield"
             value={props.desc}
-            onChange={(e) => props.setDesc(e.target.value)}
+            onChange={props.onDescChange}
           />
         </div>
         <div className="form-footer">
