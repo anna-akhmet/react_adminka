@@ -7,9 +7,9 @@ export default function Shop() {
   const [items, setItems] = useState([]);
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
+  // const [valid, setValid] = useState(false);
 
   const id = uuid();
-  console.log(items);
 
   function handleAddItem(e) {
     e.preventDefault();
@@ -18,7 +18,7 @@ export default function Shop() {
       setName("");
       setDesc("");
     }
-  }
+  } 
 
   function handleDeleteItem(e) {
     setItems(items.filter((item) => item.id !== e.target.parentElement.id));
@@ -33,15 +33,16 @@ export default function Shop() {
   }
 
 
+
   return (
     <>
-      <AddItem name={name} desc={desc} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
+      <AddItem items={items} name={name} desc={desc} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
 
-      <div>
-        {items.length === 0 && (
-          <p className="ui-title">Добавьте первый товар</p>
-        )}
-      </div>
+    <div>
+      {items.length === 0 && (
+        <p className="ui-title">Добавьте первый товар</p>
+      )}
+    </div>
 
       <ItemsList items={items} onDeleteItem={handleDeleteItem} />
     </>

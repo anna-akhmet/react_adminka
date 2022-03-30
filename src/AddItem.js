@@ -3,6 +3,7 @@ import React from "react";
 export default function AddItems(props) {
 
     return (
+        <>
         <form onSubmit={props.onAddItem}>
         <div>
           <label htmlFor="item-name">Введите товар:</label>
@@ -25,13 +26,13 @@ export default function AddItems(props) {
             value={props.desc}
             onChange={props.onDescChange}
           />
-        </div>
         <div className="form-footer">
           {(!props.name || !props.desc) && (
             <div className="validation">Заполните все поля</div>
           )}
           <input type="submit" className="ui-button" value="Добавить" />
+          </div>
         </div>
-      </form>
-    )
+        </form>
+        </>)
 }
