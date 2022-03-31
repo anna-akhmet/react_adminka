@@ -7,7 +7,7 @@ export default function Shop() {
   const [items, setItems] = useState([]);
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
-  // const [valid, setValid] = useState(false);
+  const [valid, setValid] = useState(false);
 
   const id = uuid();
 
@@ -15,6 +15,7 @@ export default function Shop() {
     e.preventDefault();
     if (name && desc) {
       setItems([...items, { id: id, name: name, desc: desc }]);
+      setValid(true);
       setName("");
       setDesc("");
     }
@@ -36,7 +37,7 @@ export default function Shop() {
 
   return (
     <>
-      <AddItem items={items} name={name} desc={desc} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
+      <AddItem items={items} name={name} desc={desc} valid={valid} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
 
     <div>
       {items.length === 0 && (

@@ -27,7 +27,7 @@ export default function AddItems(props) {
             onChange={props.onDescChange}
           />
         <div className="form-footer">
-          {(!props.name || !props.desc) && (
+          {!props.valid && (
             <div className="validation">Заполните все поля</div>
           )}
           <input type="submit" className="ui-button" value="Добавить" />
