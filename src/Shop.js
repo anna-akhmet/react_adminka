@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ItemsList from "./ItemsList.js";
 import uuid from "react-uuid";
 import AddItem from "./AddItem.js";
@@ -11,11 +11,18 @@ export default function Shop() {
 
   const id = uuid();
 
+  useEffect(() => {
+    if (!name || !desc) {
+      setValid(false);
+    } else {
+      setValid(true);
+    }
+  }, [name, desc, setValid]);
+
   function handleAddItem(e) {
     e.preventDefault();
     if (name && desc) {
       setItems([...items, { id: id, name: name, desc: desc }]);
-      setValid(true);
       setName("");
       setDesc("");
     }
