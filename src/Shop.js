@@ -17,7 +17,7 @@ export default function Shop() {
     } else {
       setValid(true);
     }
-  }, [name, desc, setValid]);
+  }, [name, desc]);
 
   function handleAddItem(e) {
     e.preventDefault();
