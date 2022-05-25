@@ -4,7 +4,13 @@ import uuid from "react-uuid";
 import AddItem from "./AddItem.js";
 
 export default function Shop() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(() => {
+  const value = localStorage.getItem("items");
+  if (!value) {
+    return [];
+  }
+  return JSON.parse(value);
+});
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [valid, setValid] = useState(false);
@@ -18,6 +24,10 @@ export default function Shop() {
       setValid(true);
     }
   }, [name, desc]);
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items])
 
   function handleAddItem(e) {
     e.preventDefault();
