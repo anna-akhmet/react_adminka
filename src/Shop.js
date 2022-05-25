@@ -29,6 +29,10 @@ export default function Shop() {
     localStorage.setItem("items", JSON.stringify(items));
   }, [items])
 
+  useEffect(() => {
+    items.length === 0 ? document.title = "Товары отсутствуют" : document.title = items.length + " товаров";
+  }, [items])
+
   function handleAddItem(e) {
     e.preventDefault();
     if (name && desc) {
