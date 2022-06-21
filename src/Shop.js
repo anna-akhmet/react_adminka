@@ -35,16 +35,19 @@ export default function Shop() {
 
   function handleAddItem(e) {
     e.preventDefault();
+
+    const requestOptions = {
+      method: "POST",
+      headers: {"Content-type": "application/json"},
+      body: JSON.stringify({
+        name: name,
+        desc: desc,
+      })
+    };
+
     if (name && desc) {
       setItems([...items, { id: id, name: name, desc: desc }]);
-      fetch("https://covid-shop-mcs.herokuapp.com", {
-        method: "POST",
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify({
-          name: name,
-          desc: desc
-        })
-      })
+      fetch("https://covid-shop-mcs.herokuapp.com", requestOptions)
       .then(response => response.json())
       .then((data) => {
         if (data && !data.error) {
@@ -55,7 +58,7 @@ export default function Shop() {
       setName("");
       setDesc("");
     }
-  } 
+  }
 
   function handleDeleteItem(e) {
     setItems(items.filter((item) => item.id !== e.target.parentElement.id));
