@@ -5,12 +5,12 @@ import AddItem from "./AddItem.js";
 
 export default function Shop() {
   const [items, setItems] = useState(() => {
-  const value = localStorage.getItem("items");
-  if (!value) {
-    return [];
-  }
-  return JSON.parse(value);
-});
+    const value = localStorage.getItem("items");
+    if (!value) {
+      return [];
+    }
+    return JSON.parse(value);
+  });
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [valid, setValid] = useState(false);
@@ -37,6 +37,21 @@ export default function Shop() {
     e.preventDefault();
     if (name && desc) {
       setItems([...items, { id: id, name: name, desc: desc }]);
+      fetch("https://covid-shop-mcs.herokuapp.com", {
+        method: "POST",
+        headers: {"Content-type": "application/json"},
+        body: JSON.stringify({
+          name: name,
+          desc: desc
+        })
+      })
+      .then(response => response.json())
+      .then((data) => {
+        if (data && !data.error) {
+          console.log(data)
+        }
+      })
+      .catch(error => console.error(error))
       setName("");
       setDesc("");
     }
