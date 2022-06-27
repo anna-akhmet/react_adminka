@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind variants;
 
 :root {
   --primary: #0000ff;
@@ -21,10 +20,6 @@ h3 {
 .ui-link {
   text-decoration: none;
   color: var(--primary);
-}
-
-.ui-title {
-  font-family: Helvetica;
 }
 
 .ui-container {
