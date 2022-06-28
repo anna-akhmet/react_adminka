@@ -8,15 +8,6 @@
   --light-gray: #cccccc;
 }
 
-body {
-  font-family: Helvetica;
-}
-
-h3 {
-  margin: 0;
-  padding: 0;
-}
-
 .ui-link {
   text-decoration: none;
   color: var(--primary);
