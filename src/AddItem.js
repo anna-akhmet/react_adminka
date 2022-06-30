@@ -1,4 +1,5 @@
 import React from "react";
+import UIButton from "./UIButton";
 
 export default function AddItems(props) {
 
@@ -6,31 +7,44 @@ export default function AddItems(props) {
         <>
         <form onSubmit={props.onAddItem}>
         <div>
-          <label htmlFor="item-name">Введите товар:</label>
+          <label htmlFor="item-name" className="m-[10px] text-base">Введите товар:</label>
           <input
             id="item-name"
             type="text"
             placeholder="Название товара"
-            className="ui-textfield"
+            className="
+              py-[12px] px-[10px]
+              m-[10px]
+              rounded-[3px]
+              border border-solid border-lightGrey
+              text-base
+            "
             value={props.name}
             onChange={props.onNameChange}
           />
         </div>
         <div>
-          <label htmlFor="item-desc">Введите описание:</label>
+          <label htmlFor="item-desc" className="m-[10px] text-base">Введите описание:</label>
           <input
             id="item-desc"
             type="text"
             placeholder="Описание товара"
-            className="ui-textfield"
+            className="
+              py-[12px] px-[10px]
+              m-[10px]
+              rounded-[3px]
+              border border-solid border-lightGrey
+              text-base
+            "
             value={props.desc}
             onChange={props.onDescChange}
           />
-        <div className="form-footer">
+        <div>
           {!props.valid && (
-            <div className="validation">Заполните все поля</div>
+            <p className="m-[10px] text-base">Заполните все поля</p>
           )}
           <input type="submit" className="ui-button" value="Добавить" />
+          <UIButton value="Добавить"/>
           </div>
         </div>
         </form>
