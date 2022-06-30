@@ -14,10 +14,13 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Helvetica', 'sans-serif']
-    }, 
+    },
+    fontSize: {
+      base: '18px',
+      lg: '30px'
+    },
     boxShadow: {
-      btn: '1px 1px 1px rgba(0, 0, 0, 0.2)',
-      btn_active: '0 0px rgba(0, 0, 0, 0.2)'
+      DEFAULT: '1px 1px 1px rgba(0, 0, 0, 0.2)'
     }
 
   }
