@@ -15,17 +15,16 @@ export default function UIButton({value}) {
                     min-w-[150px]
                     cursor-pointer
                     shadow
-                    transition duration-200 ease-out
+                    duration-200 ease-out
                     hover:opacity-80
                     active:shadow-none active:translate-y-1px
                     disabled:cursor-none disabled:opacity-40
                 " 
-                value={value} 
+                value={value}
                 />
         </>
     )
 
 }
 
-// commit changes
 // fix shadow 
