@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UIButton({value}) {
+export default function UIButton({value, disabled}) {
 
     return (
         <input 
@@ -20,6 +20,7 @@ export default function UIButton({value}) {
                 disabled:cursor-none disabled:opacity-40
             " 
             value={value}
+            disabled={disabled}
         />
     )
 
