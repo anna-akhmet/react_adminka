@@ -43,7 +43,6 @@ export default function AddItems(props) {
           {!props.valid && (
             <p className="m-[10px] text-base">Заполните все поля</p>
           )}
-          <input type="submit" className="ui-button" value="Добавить" />
           <UIButton value="Добавить"/>
           </div>
         </div>
