@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ItemButton({children, onClick}) {
+export default function ItemButton({children, onClick, disabled}) {
     
     return (
         <button className="
@@ -17,7 +17,8 @@ export default function ItemButton({children, onClick}) {
             hover:opacity-80
             disabled:cursor-none disabled:opacity-40
         " 
-        onClick={onClick}>
+        onClick={onClick}
+        disabled={disabled}>
             {children}
         </button>
     )
