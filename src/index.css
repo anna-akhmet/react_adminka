@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #0000ff;
-  --secondary: #5efc8d;
-  --light-gray: #cccccc;
-}
-
-.ui-link {
-  text-decoration: none;
-  color: var(--primary);
-}
-
 .item-info {
   margin-left: 10px;
 }
@@ -25,20 +14,6 @@
   display: flex;
   align-items: center;
   margin-bottom: 50px;
-}
-
-.item-button:active {
-  box-shadow: 0 0px rgba(0, 0, 0, 0.2);
-  transform: translateY(1px);
-}
-
-.item-button:hover {
-  opacity: 0.8;
-}
-
-.item-button:disabled {
-  opacity: 0.4;
-  cursor: disabled;
 }
 
 .item-total {
