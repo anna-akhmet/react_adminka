@@ -76,15 +76,20 @@ export default function Shop() {
 
   return (
     <>
-      <AddItem items={items} name={name} desc={desc} valid={valid} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
-
-    <div>
-      {items.length === 0 && (
-        <p className="ui-title">Добавьте первый товар</p>
-      )}
-    </div>
-
-      <ItemsList items={items} onDeleteItem={handleDeleteItem} />
+      <div className="
+        pt-[5px] 
+        w-[100vw] 
+        m-[10px]
+        ">
+        <AddItem items={items} name={name} desc={desc} valid={valid} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
+        
+        <div>
+          {items.length === 0 && (
+            <p className="ui-title">Добавьте первый товар</p>
+          )}
+        </div>
+        <ItemsList items={items} onDeleteItem={handleDeleteItem} />
+      </div>
     </>
   );
 }
