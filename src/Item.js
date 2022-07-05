@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ItemButton from "./ItemButton";
 
 export default function Item(props) {
   const [total, setTotal] = useState(0);
@@ -26,17 +27,9 @@ export default function Item(props) {
         <p className="item-desc">{info.desc}</p>
       </div>
       <div className="item-quantity">
-        <button
-          className="item-button"
-          disabled={total === 0}
-          onClick={handleRemoveClick}
-        >
-          -
-        </button>
+        <ItemButton children="-" disabled={total === 0} onClick={handleRemoveClick}/>
         <h3 className="item-total">{total ? total : ""}</h3>
-        <button className="item-button" onClick={handleAddClick}>
-          +
-        </button>
+        <ItemButton children="+" onClick={handleAddClick}/>
       </div>
     </div>
   );
