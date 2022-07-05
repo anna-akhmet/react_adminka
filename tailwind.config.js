@@ -19,9 +19,14 @@ module.exports = {
       base: '18px',
       lg: '30px'
     },
-    boxShadow: {
-      DEFAULT: '1px 1px 1px rgba(0, 0, 0, 0.2)'
+    transitionTimingFunction: {
+      'out-expo': 'cubic-bezier(0.0, 0.0, 0.58, 1.0)',
+    },
+    extend: {
+      boxShadow: {
+        base: '1px 1px 1px rgba(0, 0, 0, 0.2)'
+      }
     }
-
+    
   }
 }
