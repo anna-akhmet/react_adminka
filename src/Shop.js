@@ -14,6 +14,7 @@ export default function Shop() {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [valid, setValid] = useState(false);
+  const [loader, setLoader] = useState(false);
 
   const id = uuid();
 
@@ -47,6 +48,7 @@ export default function Shop() {
 
     if (name && desc) {
       setItems([...items, { id: id, name: name, desc: desc }]);
+      setLoader(true);
       fetch("https://covid-shop-mcs.herokuapp.com", requestOptions)
       .then(response => response.json())
       .then((data) => {
@@ -55,6 +57,7 @@ export default function Shop() {
         }
       })
       .catch(error => console.error(error))
+      .finally(() => setLoader(false))
       setName("");
       setDesc("");
     }
@@ -81,11 +84,11 @@ export default function Shop() {
         w-[100vw] 
         m-[10px]
         ">
-        <AddItem items={items} name={name} desc={desc} valid={valid} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} />
+        <AddItem items={items} name={name} desc={desc} valid={valid} onAddItem={handleAddItem} onNameChange={handleNameChange} onDescChange={handleDescChange} loader={loader}/>
         
         <div>
           {items.length === 0 && (
-            <p className="ui-title">Добавьте первый товар</p>
+            <p className="m-[10px] text-base">Добавьте первый товар</p>
           )}
         </div>
         <ItemsList items={items} onDeleteItem={handleDeleteItem} />

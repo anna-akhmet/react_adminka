@@ -43,7 +43,7 @@ export default function AddItems(props) {
           {!props.valid && (
             <p className="m-[10px] text-base">Заполните все поля</p>
           )}
-          <UIButton value="Добавить"/>
+          <UIButton value="Добавить" disabled={props.loader}/>
           </div>
         </div>
         </form>
