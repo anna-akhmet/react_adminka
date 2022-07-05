@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ItemButton({children, onDeleteItem}) {
+export default function ItemButton({children, onClick}) {
     
     return (
         <button className="
@@ -17,7 +17,7 @@ export default function ItemButton({children, onDeleteItem}) {
             hover:opacity-80
             disabled:cursor-none disabled:opacity-40
         " 
-        onClick={onDeleteItem}>
+        onClick={onClick}>
             {children}
         </button>
     )
