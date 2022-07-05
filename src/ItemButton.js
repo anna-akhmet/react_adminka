@@ -10,7 +10,7 @@ export default function ItemButton({children, onClick}) {
             py-[5px] px-[20px]
             mx-[10px]
             min-w-[50px]
-            cursor-poiner
+            cursor-pointer
             shadow-base
             duration-200 ease-out
             active:translate-y-px active:shadow-none
