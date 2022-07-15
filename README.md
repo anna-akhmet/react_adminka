@@ -1,6 +1,7 @@
 # react_adminka
 React admin panel for managing the items of an online store.
 It`s a training project as a part of the curriculum in Moscow Coding School.
+[Have a look at deployed project](http://react-adminka.vercel.app/).
 
 ## Languages & tools
 
